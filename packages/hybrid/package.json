@@ -1,0 +1,26 @@
+{
+  "name": "hybrid",
+  "version": "1.0.0",
+  "description": "A new type of webserver",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "ava",
+    "lint": "fyi"
+  },
+  "keywords": [
+    "hybrid"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "author": {
+    "name": "Tobias Herber",
+    "email": "tobihrbr@gmail.com",
+    "url": "tobihrbr.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "fyi": "^1.0.1"
+  }
+}
