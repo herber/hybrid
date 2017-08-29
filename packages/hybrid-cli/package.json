@@ -1,0 +1,45 @@
+{
+  "name": "hybrid-cli",
+  "version": "1.0.0",
+  "description": "Setup new hybrid projects",
+  "bin": "bin/cli.js",
+  "scripts": {
+    "test": "ava",
+    "lint": "fyi"
+  },
+  "keywords": [
+    "hybrid",
+    "cli",
+    "cmd",
+    "bash",
+    "terminal",
+    "term",
+    "setup",
+    "easy",
+    "config",
+    "microservices",
+    "microservice",
+    "micro",
+    "public",
+    "server",
+    "static"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "author": {
+    "name": "Tobias Herber",
+    "email": "tobihrbr@gmail.com",
+    "url": "tobihrbr.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "fyi": "^1.0.1"
+  },
+  "dependencies": {
+    "architected": "^1.0.2",
+    "chalk": "^2.1.0",
+    "mkdirp": "^0.5.1"
+  }
+}
