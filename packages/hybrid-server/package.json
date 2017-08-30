@@ -1,5 +1,5 @@
 {
-  "name": "hybrid",
+  "name": "hybrid-server",
   "version": "1.0.0",
   "description": "A new type of webserver",
   "main": "lib/index.js",
@@ -22,8 +22,11 @@
   "devDependencies": {
     "ava": "^0.22.0",
     "fyi": "^1.0.1",
-    "nyc": "^11.1.0",
-    "hybrid-middleware": "latest"
+    "node-fetch": "^1.7.2",
+    "nyc": "^11.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "hybrid-middleware": "^1.0.0",
+    "route-parser": "0.0.5"
+  }
 }
