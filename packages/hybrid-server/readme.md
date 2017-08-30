@@ -8,6 +8,30 @@
 npm install --save hybrid-server
 ```
 
+## Usage
+
+```js
+const server = require('hybrid-server')();
+
+// Executed for every request
+server.use((req, res, next) => {
+  // do stuff
+  next();
+});
+
+// Only executes for a specific route
+server.use('/route/:param/more/:params', (req, res, next) => {
+  // :* is a placeholder.
+  // the value is stored in req.params.*
+  console.log(req.params.param);
+  console.log(req.params.params);
+
+  next();
+});
+
+server.listen(3000);
+```
+
 ## License
 
 MIT © [Tobias Herber](https://tobihrbr.com)
