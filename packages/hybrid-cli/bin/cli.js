@@ -35,23 +35,47 @@ const config = {
 };
 
 const error = (msg) => {
-  console.error(chalk`{red { error }} ${ msg }`);
+  msg = msg.split('\n');
+  for (const m in msg) {
+    console.error(chalk`{red \{ error \}} ${ msg[m] }`);
+  }
 };
 
 architected(config).then((result) => {
   const { run, add, ctx } = result;
 
-  if (ctx) {
+  if (ctx.init) {
     if (!fs.existsSync(ctx.path)) {
       add('create project directory', (ctx, task) => {
         mkdirp(ctx.path)
       });
     }
 
-    add('create package.json', async () => {
-      const pkg = ``;
+    add('check directory', () => {
+      const ex = [];
 
-      return await writeFile(path.join(ctx.path, 'package.json'), pkg);
+      if (fs.existsSync(path.join(ctx.path, 'package.json'))) ex.push('package.json');
+      if (fs.existsSync(path.join(ctx.path, 'hybrid.json'))) ex.push('hybrid.json');
+      if (fs.existsSync(path.join(ctx.path, 'functions'))) ex.push('/functions');
+      if (fs.existsSync(path.join(ctx.path, 'public'))) ex.push('/public');
+
+      str = ex[0] || '';
+
+      if (ex.length > 1) {
+        for (let i = 1; i < (ex.length - 1); i++)
+          str += `, ${ ex[i] }`;
+
+        str += ` and ${ ex[ex.length -1] }`;
+      }
+
+      if (str !== '')
+        throw new Error(`${ str } already exist${ ex.length > 1 ? '' : 's' }`);
+    });
+
+    add('create package.json', async () => {
+      const pkg = { name: ctx.name, version: '1.0.0', scripts: { build: 'hybrid build', start: 'hybrid', dev: 'hybrid dev' }, license: 'MIT', dependencies: { hybrid: 'latest' } };
+
+      return await writeFile(path.join(ctx.path, 'package.json'), JSON.stringify(pkg, null, 2));
     });
 
     add('create hybrid.json', async () => {
@@ -64,8 +88,8 @@ architected(config).then((result) => {
       fs.mkdirSync(path.join(ctx.path, 'functions'));
     });
 
-    add('create functions directory', () => {
-      fs.mkdirSync(path.join(ctx.path, 'functions'));
+    add('create public directory', () => {
+      fs.mkdirSync(path.join(ctx.path, 'public'));
     });
 
     add('npm install', async () => {
