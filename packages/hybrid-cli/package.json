@@ -8,7 +8,6 @@
     "hybridcli": "bin/cli.js"
   },
   "scripts": {
-    "test": "ava",
     "lint": "fyi"
   },
   "keywords": [
@@ -38,7 +37,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.22.0",
     "fyi": "^1.0.1"
   },
   "dependencies": {
