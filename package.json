@@ -1,5 +1,5 @@
 {
-	"name": "hybrid-reop",
+	"name": "hybrid-repo",
 	"devDependencies": {
 		"lerna": "^2.1.1"
 	},
