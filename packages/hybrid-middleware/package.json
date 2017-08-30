@@ -1,0 +1,30 @@
+{
+  "name": "hybrid-middleware",
+  "version": "1.0.0",
+  "description": "Simple middleware layer for hybrid",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "nyc ava",
+    "lint": "fyi"
+  },
+  "keywords": [
+    "hybrid",
+    "middleware"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "author": {
+    "name": "Tobias Herber",
+    "email": "tobihrbr@gmail.com",
+    "url": "tobihrbr.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "fyi": "^1.0.1"
+  },
+  "dependencies": {
+    "nyc": "^11.1.0"
+  }
+}
