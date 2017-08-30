@@ -22,7 +22,8 @@
   "devDependencies": {
     "ava": "^0.22.0",
     "fyi": "^1.0.1",
-    "nyc": "^11.1.0"
+    "nyc": "^11.1.0",
+    "hybrid-middleware": "latest"
   },
   "dependencies": {}
 }
