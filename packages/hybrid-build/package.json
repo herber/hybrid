@@ -22,11 +22,7 @@
   "devDependencies": {
     "ava": "^0.22.0",
     "fyi": "^1.0.1",
-    "node-fetch": "^1.7.2",
     "nyc": "^11.1.0"
   },
-  "dependencies": {
-    "hybrid-middleware": "^1.0.0",
-    "route-parser": "0.0.5"
-  }
+  "dependencies": {}
 }
