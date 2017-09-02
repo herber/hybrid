@@ -10,7 +10,35 @@ npm install --save hybrid-build
 
 ## Usage
 
-Coming
+```js
+const build = require('hybrid-build');
+
+build('entry.js', 'output-dir').then((stats) => {
+  // Get destination file
+  console.log(stats.dest);
+
+  // Handel warnings
+  if (stats.warning !== undefined) {
+    console.error(stats.warning.message);
+  }
+})
+```
+
+## Api
+
+build(entry, dest)
+
+### entry
+
+Type: `string`
+
+The file you want to build
+
+### dest
+
+Type: `string`
+
+The output directory. `hybrid-build` will put the output file in there.
 
 ## License
 
