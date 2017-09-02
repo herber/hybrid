@@ -24,5 +24,9 @@
     "fyi": "^1.0.1",
     "nyc": "^11.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "boxen": "^1.2.1",
+    "chalk": "^2.1.0",
+    "code-excerpt": "^2.1.0"
+  }
 }
